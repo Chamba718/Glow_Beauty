@@ -124,37 +124,38 @@ def checkout_whatsapp(request):
         
         nombre_completo = f"{request.user.first_name} {request.user.last_name}".strip() or request.user.username
         
-        linea = "━━━━━━━━━━━━━━━━━━━━━━━━"
+        # Usar guiones simples: compatibles al 100% con WhatsApp
+        linea = "- - - - - - - - - - - - -"
         
-        mensaje  = f"✨ *NUEVO PEDIDO — GLOW BEAUTY* ✨\n"
+        mensaje  = "\u2728 *NUEVO PEDIDO \u2014 GLOW BEAUTY* \u2728\n"
         mensaje += f"{linea}\n\n"
         
-        mensaje += f"👤 *Cliente*\n"
-        mensaje += f"   Nombre: *{nombre_completo}*\n"
-        mensaje += f"   📞 Tel: {perfil.telefono}\n"
-        mensaje += f"   📍 Dirección: {perfil.direccion}\n\n"
+        mensaje += "\U0001f464 *Datos del cliente*\n"
+        mensaje += f"  Nombre: *{nombre_completo}*\n"
+        mensaje += f"  \U0001f4de Tel: {perfil.telefono}\n"
+        mensaje += f"  \U0001f4cd Dirección: {perfil.direccion}\n\n"
         
         mensaje += f"{linea}\n"
-        mensaje += f"🛍️ *Detalle del Pedido*\n"
+        mensaje += "\U0001f6cd Detalle del Pedido\n"
         mensaje += f"{linea}\n"
         for item in carrito.items.all():
             subtotal = cop(item.get_subtotal)
             precio_unit = cop(item.producto.precio)
-            mensaje += f"\n▸ *{item.producto.nombre}*\n"
-            mensaje += f"   {item.cantidad} ud. × {precio_unit} = *{subtotal}*\n"
+            mensaje += f"\n  \u25b8 *{item.producto.nombre}*\n"
+            mensaje += f"    {item.cantidad} ud. x {precio_unit} = *{subtotal}*\n"
         
         total = cop(carrito.get_total)
         mensaje += f"\n{linea}\n"
-        mensaje += f"💰 *TOTAL A PAGAR: {total}*\n"
+        mensaje += f"\U0001f4b0 *TOTAL A PAGAR: {total}*\n"
         mensaje += f"{linea}\n\n"
-        mensaje += f"_Pago contra entrega / transferencia._\n"
-        mensaje += f"¡Gracias por tu compra! 🌸"
+        mensaje += "_Pago contra entrega / transferencia._\n"
+        mensaje += "\U0001f338 Gracias por tu compra en Glow Beauty!"
         
         # Vaciar el carrito
         carrito.items.all().delete()
         
-        # Codificar mensaje para URL
-        mensaje_codificado = urllib.parse.quote(mensaje)
+        # Codificar con safe='' para garantizar que los emojis se transmitan correctamente
+        mensaje_codificado = urllib.parse.quote(mensaje, safe="")
         url_whatsapp = f"https://wa.me/{numero_whatsapp}?text={mensaje_codificado}"
         
         return redirect(url_whatsapp)
