@@ -19,6 +19,8 @@ INSTALLED_APPS = [
     "jazzmin",
     "django.contrib.admin", "django.contrib.auth", "django.contrib.contenttypes",
     "django.contrib.sessions", "django.contrib.messages", "django.contrib.staticfiles",
+    "cloudinary_storage",
+    "cloudinary",
     "catalogo",
 ]
 MIDDLEWARE = [
@@ -64,8 +66,15 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Cloudinary Configuration for Media
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+if "CLOUDINARY_URL" in os.environ:
+    DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+else:
+    # Fallback to local if CLOUDINARY_URL is not set (e.g., local development without env var)
+    MEDIA_ROOT = BASE_DIR / "media"
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL = "catalogo:iniciar_sesion"
