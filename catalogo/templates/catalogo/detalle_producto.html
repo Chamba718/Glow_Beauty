@@ -1,0 +1,25 @@
+{% extends 'catalogo/base.html' %}
+{% block title %}{{ producto.nombre }} | Glow Beauty{% endblock %}
+{% block content %}
+<section class="detail">
+  <a class="back" href="{% url 'catalogo:inicio' %}">← Volver al catálogo</a>
+  <div class="detail-grid">
+    <div class="detail-image">{% if producto.imagen %}<img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">{% else %}<span>✦</span>{% endif %}</div>
+    <div class="detail-copy">
+      <p class="eyebrow">{{ producto.categoria.nombre }}</p>
+      <h1>{{ producto.nombre }}</h1>
+      <p class="price">${{ producto.precio|floatformat:0 }}</p>
+      <p>{{ producto.descripcion|linebreaksbr }}</p>
+      {% if producto.destacado %}<span class="tag">Producto destacado</span>{% endif %}
+      {% if user.is_authenticated %}
+        <form method="post" action="{% url 'catalogo:alternar_favorito' producto.slug %}" class="favorite-form">
+          {% csrf_token %}<button class="button" type="submit">{% if es_favorito %}Quitar de favoritos{% else %}♡ Guardar en favoritos{% endif %}</button>
+        </form>
+      {% else %}
+        <a class="button" href="{% url 'catalogo:iniciar_sesion' %}?next={{ request.path }}">Ingresa para guardar favoritos</a>
+      {% endif %}
+      <p class="availability">Disponible para consulta</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

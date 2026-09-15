@@ -1,0 +1,12 @@
+{% extends 'catalogo/base.html' %}
+{% block title %}Mis favoritos | Glow Beauty{% endblock %}
+{% block content %}
+<section class="catalog">
+  <div class="section-heading"><p class="eyebrow">TU SELECCIÓN</p><h1>Mis favoritos</h1></div>
+  <div class="product-grid">
+    {% for favorito in favoritos %}{% with producto=favorito.producto %}{% include 'catalogo/partials/tarjeta_producto.html' %}{% endwith %}{% empty %}
+      <p class="empty">Aún no has guardado productos. Explora el catálogo para encontrar tus favoritos.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

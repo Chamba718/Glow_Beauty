@@ -1,0 +1,32 @@
+{% extends 'catalogo/base.html' %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">COSMETOLOGÍA CON INTENCIÓN</p>
+    <h1>Tu ritual de belleza empieza <span>aquí.</span></h1>
+    <p>Productos elegidos para acompañar cada versión de ti: delicada, segura, luminosa y auténtica.</p>
+    <a class="button" href="#catalogo">Explorar catálogo</a>
+  </div>
+  <div class="hero-art" aria-hidden="true"><div class="cherry one"></div><div class="cherry two"></div><div class="bow">⌇</div></div>
+</section>
+
+{% if destacados %}
+<section class="featured">
+  <div class="section-heading"><p class="eyebrow">SELECCIÓN GLOW</p><h2>Favoritos para brillar</h2></div>
+  <div class="product-grid compact">
+    {% for producto in destacados %}{% include 'catalogo/partials/tarjeta_producto.html' %}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section id="catalogo" class="catalog">
+  <div class="section-heading"><p class="eyebrow">ENCUENTRA TU FAVORITO</p><h2>El catálogo</h2></div>
+  <nav class="filters" aria-label="Filtrar productos">
+    <a href="{% url 'catalogo:inicio' %}#catalogo" class="{% if not categoria_actual %}active{% endif %}">Todos</a>
+    {% for categoria in categorias %}<a href="?categoria={{ categoria.slug }}#catalogo" class="{% if categoria_actual == categoria.slug %}active{% endif %}">{{ categoria.nombre }}</a>{% endfor %}
+  </nav>
+  <div class="product-grid">
+    {% for producto in productos %}{% include 'catalogo/partials/tarjeta_producto.html' %}{% empty %}<p class="empty">Pronto encontrarás novedades en esta categoría.</p>{% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'catalogo/base.html' %}
+{% block title %}Ingresar | Glow Beauty{% endblock %}
+{% block content %}
+<section class="auth-page"><div class="auth-card"><p class="eyebrow">HOLA DE NUEVO</p><h1>Ingresar</h1>
+  <form method="post">{% csrf_token %}{{ form.as_p }}<button class="button" type="submit">Entrar</button></form>
+  <p>¿Aún no tienes cuenta? <a href="{% url 'catalogo:registro' %}">Créala aquí</a>.</p>
+</div></section>
+{% endblock %}

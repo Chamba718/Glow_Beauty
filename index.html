@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Glow Beauty - Catálogo de productos de belleza premium. Maquillaje, skincare, labiales y fragancias de alta calidad." />
+  <meta name="keywords" content="maquillaje, belleza, skincare, labiales, fragancias, cosméticos, Glow Beauty" />
+  <title>Glow Beauty | Catálogo de Belleza Premium</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav id="navbar" role="navigation" aria-label="Navegación principal">
+    <a href="#" class="nav-logo" id="nav-home-link">
+      <!-- Logo de Glow Beauty -->
+      <div style="
+        width:48px; height:48px; border-radius:50%;
+        background: linear-gradient(135deg,#f9d5e5,#fce4ec);
+        display:flex; align-items:center; justify-content:center;
+        font-family:'Dancing Script',cursive; font-size:1.3rem;
+        color:#b5294c; font-weight:700; box-shadow:0 2px 12px rgba(185,40,76,.25);
+        border:2px solid #ffc0d8; flex-shrink:0;
+      ">G</div>
+      <div class="nav-logo-text">
+        <span class="nav-brand">Glow Beauty</span>
+        <span class="nav-tagline">✨ Tu brillo, nuestra pasión</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" id="nav-inicio">Inicio</a></li>
+      <li><a href="#categorias" id="nav-categorias">Categorías</a></li>
+      <li><a href="#productos" id="nav-productos">Productos</a></li>
+      <li><a href="#ofertas" id="nav-ofertas">Ofertas</a></li>
+      <li><a href="#footer" id="nav-contacto">Contacto</a></li>
+    </ul>
+
+    <div style="display:flex; align-items:center; gap:12px;">
+      <button id="cart-btn" aria-label="Ver carrito de compras">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white" aria-hidden="true">
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.1 17 7 17h11v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+        </svg>
+        Carrito
+        <span id="cart-count" aria-live="polite">0</span>
+      </button>
+      <button id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section id="hero" aria-label="Sección principal">
+    <div class="hero-bg-decor">
+      <div class="hero-circle hero-circle-1"></div>
+      <div class="hero-circle hero-circle-2"></div>
+      <div class="hero-circle hero-circle-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          Productos de Belleza Premium
+        </div>
+
+        <h1 class="hero-title">
+          Descubre tu
+          <span>Glow Perfecto</span>
+        </h1>
+
+        <p class="hero-subtitle">✨ Belleza que te hace brillar</p>
+
+        <p class="hero-description">
+          En Glow Beauty encontrarás los mejores productos de maquillaje, skincare, 
+          labiales y fragancias. Calidad premium al mejor precio, porque mereces brillar cada día.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#productos" class="btn-primary" id="hero-shop-btn">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+            </svg>
+            Ver Catálogo
+          </a>
+          <a href="#categorias" class="btn-secondary" id="hero-categories-btn">
+            Explorar Categorías →
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Productos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">+500</div>
+            <div class="stat-label">Clientas felices</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Originales</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div class="hero-image-decor hero-image-decor-1"></div>
+        <div class="hero-image-decor hero-image-decor-2"></div>
+        <div class="hero-image-frame">
+          <img src="hero_banner.jpg" alt="Colección de productos Glow Beauty - maquillaje premium" loading="eager" />
+          <div class="hero-img-badge">
+            <div class="badge-icon">🌸</div>
+            <div class="badge-text">
+              <strong>Nueva Colección</strong>
+              <span>Primavera 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CATEGORÍAS
+       ============================================================ -->
+  <section id="categorias" aria-label="Categorías de productos">
+    <div class="section-header">
+      <span class="section-label">✨ Explora</span>
+      <h2 class="section-title">Nuestras <span>Categorías</span></h2>
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <span class="divider-gem">🌸</span>
+        <div class="divider-line right"></div>
+      </div>
+    </div>
+
+    <div class="categories-grid">
+      <a href="#productos" class="category-card" id="cat-maquillaje" data-filter="maquillaje" aria-label="Categoría Maquillaje">
+        <img src="product_makeup.jpg" alt="Maquillaje premium - paletas, labiales, brochas" loading="lazy" />
+        <div class="category-overlay">
+          <div class="category-icon">💄</div>
+          <div class="category-name">Maquillaje</div>
+          <div class="category-count">3 productos</div>
+        </div>
+        <div class="category-arrow">→</div>
+      </a>
+
+      <a href="#productos" class="category-card" id="cat-skincare" data-filter="skincare" aria-label="Categoría Skincare">
+        <img src="product_skincare.jpg" alt="Skincare - cremas, serums, hidratación" loading="lazy" />
+        <div class="category-overlay">
+          <div class="category-icon">🌿</div>
+          <div class="category-name">Skincare</div>
+          <div class="category-count">3 productos</div>
+        </div>
+        <div class="category-arrow">→</div>
+      </a>
+
+      <a href="#productos" class="category-card" id="cat-labios" data-filter="labios" aria-label="Categoría Labios">
+        <img src="product_lips.jpg" alt="Labios - labiales, lip gloss, delineadores" loading="lazy" />
+        <div class="category-overlay">
+          <div class="category-icon">💋</div>
+          <div class="category-name">Labios</div>
+          <div class="category-count">3 productos</div>
+        </div>
+        <div class="category-arrow">→</div>
+      </a>
+
+      <a href="#productos" class="category-card" id="cat-fragancias" data-filter="fragancias" aria-label="Categoría Fragancias">
+        <img src="product_fragrance.jpg" alt="Fragancias - perfumes y colonias" loading="lazy" />
+        <div class="category-overlay">
+          <div class="category-icon">🌸</div>
+          <div class="category-name">Fragancias</div>
+          <div class="category-count">3 productos</div>
+        </div>
+        <div class="category-arrow">→</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRODUCTOS
+       ============================================================ -->
+  <section id="productos" aria-label="Catálogo de productos">
+    <div class="section-header">
+      <span class="section-label">💎 Lo mejor para ti</span>
+      <h2 class="section-title">Nuestros <span>Productos</span></h2>
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <span class="divider-gem">💄</span>
+        <div class="divider-line right"></div>
+      </div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filter-tabs" role="group" aria-label="Filtros de productos">
+      <button class="filter-tab active" data-filter="todos" id="filter-todos">✨ Todos</button>
+      <button class="filter-tab" data-filter="maquillaje" id="filter-maquillaje">💄 Maquillaje</button>
+      <button class="filter-tab" data-filter="skincare" id="filter-skincare">🌿 Skincare</button>
+      <button class="filter-tab" data-filter="labios" id="filter-labios">💋 Labios</button>
+      <button class="filter-tab" data-filter="fragancias" id="filter-fragancias">🌸 Fragancias</button>
+    </div>
+
+    <!-- Grid de productos -->
+    <div class="products-grid" id="products-grid">
+
+      <!-- MAQUILLAJE -->
+      <article class="product-card" data-category="maquillaje" id="prod-1">
+        <div class="product-img-wrap">
+          <img src="product_makeup.jpg" alt="Paleta de sombras Rose Gold Glow" loading="lazy" />
+          <span class="product-badge badge-new">Nuevo</span>
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="1">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Maquillaje</div>
+          <h3 class="product-name">Paleta Rose Gold Glow</h3>
+          <p class="product-desc">12 tonos irresistibles en acabados mate, shimmer y glitter. Perfecta para looks día y noche.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="star-count">(48)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$320</span>
+              <span class="price-original">$450</span>
+            </div>
+            <button class="btn-add-cart" data-id="1" data-name="Paleta Rose Gold Glow" data-price="320" data-img="product_makeup.jpg" aria-label="Agregar Paleta Rose Gold Glow al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="maquillaje" id="prod-2">
+        <div class="product-img-wrap">
+          <img src="product_makeup.jpg" alt="Base Ethereal Glow con cobertura natural" loading="lazy" />
+          <span class="product-badge badge-hot">🔥 Top</span>
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="2">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Maquillaje</div>
+          <h3 class="product-name">Base Ethereal Glow</h3>
+          <p class="product-desc">Cobertura ligera a media. Acabado luminoso y natural que dura todo el día. SPF 20.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="color:#ddd">★</span>
+            <span class="star-count">(36)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$280</span>
+              <span class="price-original">$380</span>
+            </div>
+            <button class="btn-add-cart" data-id="2" data-name="Base Ethereal Glow" data-price="280" data-img="product_makeup.jpg" aria-label="Agregar Base Ethereal Glow al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="maquillaje" id="prod-3">
+        <div class="product-img-wrap">
+          <img src="product_makeup.jpg" alt="Blush & Highlighter Shimmer Glow" loading="lazy" />
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="3">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Maquillaje</div>
+          <h3 class="product-name">Blush & Highlighter Shimmer</h3>
+          <p class="product-desc">Duo de rubor e iluminador en tono rosado dorado. Ilumina y da vida a tu rostro.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="star-count">(22)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$195</span>
+            </div>
+            <button class="btn-add-cart" data-id="3" data-name="Blush & Highlighter Shimmer" data-price="195" data-img="product_makeup.jpg" aria-label="Agregar Blush Shimmer al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- SKINCARE -->
+      <article class="product-card" data-category="skincare" id="prod-4">
+        <div class="product-img-wrap">
+          <img src="product_skincare.jpg" alt="Crema Regeneradora de Día con Rosa y Peonía" loading="lazy" />
+          <span class="product-badge badge-new">Nuevo</span>
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="4">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Skincare</div>
+          <h3 class="product-name">Crema Regeneradora Rosa & Peonía</h3>
+          <p class="product-desc">50ml. Hidratación profunda con extracto de rosa y peonía. Piel suave y radiante.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="star-count">(54)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$350</span>
+              <span class="price-original">$480</span>
+            </div>
+            <button class="btn-add-cart" data-id="4" data-name="Crema Regeneradora Rosa & Peonía" data-price="350" data-img="product_skincare.jpg" aria-label="Agregar Crema Regeneradora al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="skincare" id="prod-5">
+        <div class="product-img-wrap">
+          <img src="product_skincare.jpg" alt="Serum Vitamina C Iluminador Aurora Botanica" loading="lazy" />
+          <span class="product-badge badge-hot">🔥 Top</span>
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="5">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Skincare</div>
+          <h3 class="product-name">Serum Vitamina C Iluminador</h3>
+          <p class="product-desc">30ml. Con Vitamina C y Rosehip. Unifica el tono, reduce manchas y aporta luminosidad.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="star-count">(71)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$290</span>
+              <span class="price-original">$400</span>
+            </div>
+            <button class="btn-add-cart" data-id="5" data-name="Serum Vitamina C Iluminador" data-price="290" data-img="product_skincare.jpg" aria-label="Agregar Serum al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="skincare" id="prod-6">
+        <div class="product-img-wrap">
+          <img src="product_skincare.jpg" alt="Mascarilla de Noche Velvet Hydration" loading="lazy" />
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="6">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Skincare</div>
+          <h3 class="product-name">Sleeping Mask Velvet Hydration</h3>
+          <p class="product-desc">75ml. Mascarilla nocturna de hidratación intensa. Despierta con la piel suave como terciopelo.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="color:#ddd">★</span>
+            <span class="star-count">(29)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$245</span>
+            </div>
+            <button class="btn-add-cart" data-id="6" data-name="Sleeping Mask Velvet Hydration" data-price="245" data-img="product_skincare.jpg" aria-label="Agregar Sleeping Mask al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- LABIOS -->
+      <article class="product-card" data-category="labios" id="prod-7">
+        <div class="product-img-wrap">
+          <img src="product_lips.jpg" alt="Labial Bloom Rose mate de larga duración" loading="lazy" />
+          <span class="product-badge badge-sale">Oferta</span>
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="7">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Labios</div>
+          <h3 class="product-name">Labial Bloom Rose Mate</h3>
+          <p class="product-desc">Larga duración hasta 12 horas. Fórmula hidratante que no reseca. Tono rosa nude perfecto.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="star-count">(63)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$120</span>
+              <span class="price-original">$180</span>
+            </div>
+            <button class="btn-add-cart" data-id="7" data-name="Labial Bloom Rose Mate" data-price="120" data-img="product_lips.jpg" aria-label="Agregar Labial Bloom Rose al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="labios" id="prod-8">
+        <div class="product-img-wrap">
+          <img src="product_lips.jpg" alt="Lip Gloss Crystal Shine brillante" loading="lazy" />
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="8">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Labios</div>
+          <h3 class="product-name">Lip Gloss Crystal Shine</h3>
+          <p class="product-desc">Brillo dimensional con efecto plumping. Enriquecido con vitamina E. 3 tonos disponibles.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="star-count">(41)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$95</span>
+            </div>
+            <button class="btn-add-cart" data-id="8" data-name="Lip Gloss Crystal Shine" data-price="95" data-img="product_lips.jpg" aria-label="Agregar Lip Gloss al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="labios" id="prod-9">
+        <div class="product-img-wrap">
+          <img src="product_lips.jpg" alt="Delineador de labios precisión" loading="lazy" />
+          <span class="product-badge badge-new">Nuevo</span>
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="9">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Labios</div>
+          <h3 class="product-name">Lipliner Precision Rose</h3>
+          <p class="product-desc">Delineador de precisión retráctil. Define y da forma perfecta a tus labios. Larga duración.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="color:#ddd">★</span>
+            <span class="star-count">(18)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$80</span>
+            </div>
+            <button class="btn-add-cart" data-id="9" data-name="Lipliner Precision Rose" data-price="80" data-img="product_lips.jpg" aria-label="Agregar Lipliner al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- FRAGANCIAS -->
+      <article class="product-card" data-category="fragancias" id="prod-10">
+        <div class="product-img-wrap">
+          <img src="product_fragrance.jpg" alt="Perfume Fleur Séduisante Eau de Parfum" loading="lazy" />
+          <span class="product-badge badge-hot">🔥 Top</span>
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="10">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Fragancias</div>
+          <h3 class="product-name">Fleur Séduisante EDP 50ml</h3>
+          <p class="product-desc">Notas florales de rosa, jazmín y sándalo. Una fragancia romántica e irresistible para cada día.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="star-count">(87)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$520</span>
+              <span class="price-original">$700</span>
+            </div>
+            <button class="btn-add-cart" data-id="10" data-name="Fleur Séduisante EDP 50ml" data-price="520" data-img="product_fragrance.jpg" aria-label="Agregar Fleur Séduisante al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="fragancias" id="prod-11">
+        <div class="product-img-wrap">
+          <img src="product_fragrance.jpg" alt="Aura Blossom Eau de Parfum" loading="lazy" />
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="11">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Fragancias</div>
+          <h3 class="product-name">Aura Blossom EDP</h3>
+          <p class="product-desc">Fragancia fresca y femenina con notas de flor de cerezo, frambuesa y almizcle blanco.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="star-count">(55)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$420</span>
+            </div>
+            <button class="btn-add-cart" data-id="11" data-name="Aura Blossom EDP" data-price="420" data-img="product_fragrance.jpg" aria-label="Agregar Aura Blossom al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="fragancias" id="prod-12">
+        <div class="product-img-wrap">
+          <img src="product_fragrance.jpg" alt="Petal Whisper Eau de Parfum" loading="lazy" />
+          <span class="product-badge badge-sale">Oferta</span>
+          <button class="product-wishlist" aria-label="Agregar a favoritos" data-id="12">🤍</button>
+        </div>
+        <div class="product-body">
+          <div class="product-category-tag">Fragancias</div>
+          <h3 class="product-name">Petal Whisper EDP</h3>
+          <p class="product-desc">Delicado susurro floral con peonía, lirio y vainilla. Elegancia y feminidad en cada spray.</p>
+          <div class="product-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="color:#ddd">★</span>
+            <span class="star-count">(33)</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="price-current">$360</span>
+              <span class="price-original">$480</span>
+            </div>
+            <button class="btn-add-cart" data-id="12" data-name="Petal Whisper EDP" data-price="360" data-img="product_fragrance.jpg" aria-label="Agregar Petal Whisper al carrito">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+              Agregar
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /products-grid -->
+  </section>
+
+  <!-- ============================================================
+       BANNER PROMO
+       ============================================================ -->
+  <div id="promo-banner" aria-label="Promoción especial">
+    <div class="promo-content">
+      <p class="promo-label">🎀 Oferta Especial</p>
+      <h2 class="promo-title">Envío <strong>GRATIS</strong> en tu primer pedido</h2>
+      <p class="promo-desc">¡Escríbenos por WhatsApp y obtén tu descuento de bienvenida!</p>
+      <a href="#" class="btn-promo" id="promo-whatsapp-btn">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#25D366" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       OFERTAS ESPECIALES
+       ============================================================ -->
+  <section id="ofertas" aria-label="Ofertas especiales destacadas">
+    <div class="section-header">
+      <span class="section-label">🏷️ No te las pierdas</span>
+      <h2 class="section-title">Ofertas <span>Especiales</span></h2>
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <span class="divider-gem">⭐</span>
+        <div class="divider-line right"></div>
+      </div>
+    </div>
+
+    <div class="offers-grid">
+      <div class="offer-card" id="offer-1">
+        <img src="product_makeup.jpg" alt="Kit Maquillaje Completo" class="offer-img" />
+        <div class="offer-info">
+          <span class="offer-badge">⭐ Destacado</span>
+          <div class="offer-name">Kit Maquillaje Esencial</div>
+          <div class="offer-price-row">
+            <span class="offer-price-now">$550</span>
+            <span class="offer-price-was">$800</span>
+            <span class="offer-discount">-31%</span>
+          </div>
+          <button class="btn-offer-cart" data-id="13" data-name="Kit Maquillaje Esencial" data-price="550" data-img="product_makeup.jpg"
+                  aria-label="Agregar Kit Maquillaje al carrito">
+            ¡Lo quiero! →
+          </button>
+        </div>
+      </div>
+
+      <div class="offer-card" id="offer-2">
+        <img src="product_skincare.jpg" alt="Rutina Skincare Completa" class="offer-img" />
+        <div class="offer-info">
+          <span class="offer-badge">🌿 Más Vendido</span>
+          <div class="offer-name">Rutina Skincare Completa</div>
+          <div class="offer-price-row">
+            <span class="offer-price-now">$680</span>
+            <span class="offer-price-was">$960</span>
+            <span class="offer-discount">-29%</span>
+          </div>
+          <button class="btn-offer-cart" data-id="14" data-name="Rutina Skincare Completa" data-price="680" data-img="product_skincare.jpg"
+                  aria-label="Agregar Rutina Skincare al carrito">
+            ¡Lo quiero! →
+          </button>
+        </div>
+      </div>
+
+      <div class="offer-card" id="offer-3">
+        <img src="product_fragrance.jpg" alt="Set de Perfumes Miniatura" class="offer-img" />
+        <div class="offer-info">
+          <span class="offer-badge">🌸 Nuevo Llegado</span>
+          <div class="offer-name">Set Fragancias Miniatura x3</div>
+          <div class="offer-price-row">
+            <span class="offer-price-now">$420</span>
+            <span class="offer-price-was">$600</span>
+            <span class="offer-discount">-30%</span>
+          </div>
+          <button class="btn-offer-cart" data-id="15" data-name="Set Fragancias Miniatura x3" data-price="420" data-img="product_fragrance.jpg"
+                  aria-label="Agregar Set Fragancias al carrito">
+            ¡Lo quiero! →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer id="footer" aria-label="Pie de página">
+    <div class="footer-grid">
+      <!-- Columna Marca -->
+      <div>
+        <div class="footer-brand-logo">
+          <div style="
+            width:56px; height:56px; border-radius:50%;
+            background: linear-gradient(135deg,#f9d5e5,#fce4ec);
+            display:flex; align-items:center; justify-content:center;
+            font-family:'Dancing Script',cursive; font-size:1.6rem;
+            color:#b5294c; font-weight:700; border:2px solid rgba(255,192,216,.6);
+          ">G</div>
+          <div>
+            <div class="footer-brand-name">Glow Beauty</div>
+            <div class="footer-brand-tagline">Tu brillo, nuestra pasión</div>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Somos tu tienda de belleza de confianza. Ofrecemos productos cosméticos premium 
+          de alta calidad para que te sientas increíble cada día. ✨
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook" id="social-fb">📘</a>
+          <a href="#" class="social-btn" aria-label="Instagram" id="social-ig">📸</a>
+          <a href="#" class="social-btn" aria-label="TikTok" id="social-tk">🎵</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp" id="social-wa">💬</a>
+        </div>
+      </div>
+
+      <!-- Columna Links -->
+      <div>
+        <h3 class="footer-col-title">Catálogo</h3>
+        <ul class="footer-links">
+          <li><a href="#categorias" id="footer-cat-link">→ Todas las Categorías</a></li>
+          <li><a href="#productos" id="footer-makeup-link">→ Maquillaje</a></li>
+          <li><a href="#productos" id="footer-skincare-link">→ Skincare</a></li>
+          <li><a href="#productos" id="footer-lips-link">→ Labios</a></li>
+          <li><a href="#productos" id="footer-frag-link">→ Fragancias</a></li>
+          <li><a href="#ofertas" id="footer-offers-link">→ Ofertas Especiales</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna Contacto -->
+      <div>
+        <h3 class="footer-col-title">Contáctanos</h3>
+        <div class="footer-contact-item">
+          <span class="contact-icon">💬</span>
+          <div>
+            <strong style="color:white">WhatsApp</strong><br />
+            Escríbenos para hacer tu pedido
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="contact-icon">📸</span>
+          <div>
+            <strong style="color:white">Instagram</strong><br />
+            @glowbeauty_oficial
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="contact-icon">🕐</span>
+          <div>
+            <strong style="color:white">Horario</strong><br />
+            Lun–Sáb: 9:00am – 8:00pm
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="contact-icon">🚚</span>
+          <div>
+            <strong style="color:white">Envíos</strong><br />
+            A todo el país · Envío gratis en pedidos seleccionados
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <span>Glow Beauty</span>. Todos los derechos reservados. 🌸</p>
+      <p>Hecho con 💖 para brillar cada día</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CARRITO LATERAL
+       ============================================================ -->
+  <div id="cart-overlay" aria-hidden="true"></div>
+
+  <aside id="cart-panel" aria-label="Carrito de compras" role="complementary">
+    <div class="cart-header">
+      <div class="cart-title">
+        <span>🛍️</span>
+        Mi Carrito
+      </div>
+      <button id="cart-close" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div class="cart-items" id="cart-items-list">
+      <div class="cart-empty" id="cart-empty">
+        <div class="cart-empty-icon">🛒</div>
+        <h3>Tu carrito está vacío</h3>
+        <p>Agrega productos del catálogo para comenzar tu compra</p>
+      </div>
+    </div>
+
+    <div class="cart-footer" id="cart-footer" style="display:none;">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cart-subtotal-amount">$0</span>
+      </div>
+      <div class="cart-subtotal">
+        <span>Envío</span>
+        <span style="color:#25D366;font-weight:700;">GRATIS 🎉</span>
+      </div>
+      <div class="cart-total">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-amount" id="cart-total-amount">$0</span>
+      </div>
+      <button class="btn-checkout" id="checkout-whatsapp-btn" aria-label="Finalizar pedido por WhatsApp">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Pedir por WhatsApp
+      </button>
+      <p class="checkout-note">📦 Envío gratis en tu primer pedido</p>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       WHATSAPP FLOTANTE
+       ============================================================ -->
+  <div id="whatsapp-float">
+    <div class="whatsapp-tooltip">¡Escríbenos! 💬</div>
+    <button id="whatsapp-btn" aria-label="Contactar por WhatsApp">
+      <div class="whatsapp-pulse"></div>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ============================================================
+       TOAST NOTIFICATIONS
+       ============================================================ -->
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // ============================================================
+    // CONFIG: Cambia este número por el real de WhatsApp
+    // ============================================================
+    // Reemplaza este valor por tu número, con código de país y sin +, espacios ni guiones.
+    const WHATSAPP_NUMBER = 'TUNUMERODETELEFONO'; // Ejemplo Colombia: '573001234567'
+
+    // ============================================================
+    // ESTADO DEL CARRITO
+    // ============================================================
+    let cart = [];
+
+    // ============================================================
+    // NAVBAR — Scroll effect + Hamburger
+    // ============================================================
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('mobile-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close nav on link click (mobile)
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ============================================================
+    // FILTROS DE PRODUCTOS
+    // ============================================================
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const productCards = document.querySelectorAll('.product-card');
+    const categoryCards = document.querySelectorAll('.category-card');
+
+    function filterProducts(filter) {
+      productCards.forEach(card => {
+        const cat = card.dataset.category;
+        const show = filter === 'todos' || cat === filter;
+        card.setAttribute('data-hidden', show ? 'false' : 'true');
+        card.style.display = show ? 'flex' : 'none';
+      });
+    }
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        filterProducts(tab.dataset.filter);
+      });
+    });
+
+    // Categoría card → filtrar
+    categoryCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        const filter = card.dataset.filter;
+        document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          filterTabs.forEach(t => t.classList.remove('active'));
+          const targetTab = document.querySelector(`.filter-tab[data-filter="${filter}"]`);
+          if (targetTab) {
+            targetTab.classList.add('active');
+            filterProducts(filter);
+          }
+        }, 600);
+      });
+    });
+
+    // ============================================================
+    // CARRITO
+    // ============================================================
+    const cartBtn = document.getElementById('cart-btn');
+    const cartPanel = document.getElementById('cart-panel');
+    const cartOverlay = document.getElementById('cart-overlay');
+    const cartClose = document.getElementById('cart-close');
+    const cartCount = document.getElementById('cart-count');
+    const cartItemsList = document.getElementById('cart-items-list');
+    const cartEmpty = document.getElementById('cart-empty');
+    const cartFooter = document.getElementById('cart-footer');
+    const cartSubtotalEl = document.getElementById('cart-subtotal-amount');
+    const cartTotalEl = document.getElementById('cart-total-amount');
+
+    function openCart() {
+      cartPanel.classList.add('open');
+      cartOverlay.classList.add('open');
+      cartOverlay.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeCart() {
+      cartPanel.classList.remove('open');
+      cartOverlay.classList.remove('open');
+      cartOverlay.setAttribute('aria-hidden', 'true');
+    }
+
+    cartBtn.addEventListener('click', openCart);
+    cartClose.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+
+    function updateCartUI() {
+      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+
+      cartCount.textContent = count;
+
+      // Bump animation
+      cartCount.classList.remove('bump');
+      void cartCount.offsetWidth; // reflow
+      if (count > 0) cartCount.classList.add('bump');
+
+      cartSubtotalEl.textContent = `$${total.toLocaleString()}`;
+      cartTotalEl.textContent = `$${total.toLocaleString()}`;
+
+      // Show/hide empty state
+      cartEmpty.style.display = cart.length === 0 ? 'block' : 'none';
+      cartFooter.style.display = cart.length === 0 ? 'none' : 'flex';
+
+      // Render items
+      const existingItems = cartItemsList.querySelectorAll('.cart-item');
+      existingItems.forEach(el => el.remove());
+
+      cart.forEach(item => {
+        const el = document.createElement('div');
+        el.className = 'cart-item';
+        el.id = `cart-item-${item.id}`;
+        el.innerHTML = `
+          <img src="${item.img}" alt="${item.name}" class="cart-item-img" />
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">$${(item.price * item.qty).toLocaleString()}</div>
+            <div class="cart-item-controls">
+              <button class="qty-btn" data-action="decrease" data-id="${item.id}" aria-label="Reducir cantidad">−</button>
+              <span class="qty-display">${item.qty}</span>
+              <button class="qty-btn" data-action="increase" data-id="${item.id}" aria-label="Aumentar cantidad">+</button>
+            </div>
+          </div>
+          <button class="cart-item-remove" data-id="${item.id}" aria-label="Eliminar ${item.name} del carrito">🗑️</button>
+        `;
+        cartItemsList.appendChild(el);
+      });
+
+      // Quantity & remove event listeners
+      cartItemsList.querySelectorAll('.qty-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          const action = btn.dataset.action;
+          const itemIdx = cart.findIndex(i => i.id === id);
+          if (itemIdx === -1) return;
+          if (action === 'increase') {
+            cart[itemIdx].qty++;
+          } else {
+            cart[itemIdx].qty--;
+            if (cart[itemIdx].qty <= 0) cart.splice(itemIdx, 1);
+          }
+          updateCartUI();
+        });
+      });
+
+      cartItemsList.querySelectorAll('.cart-item-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          cart = cart.filter(i => i.id !== id);
+          updateCartUI();
+          showToast('🗑️', 'Producto eliminado del carrito');
+        });
+      });
+    }
+
+    function addToCart(id, name, price, img) {
+      const existing = cart.find(i => i.id === id);
+      if (existing) {
+        existing.qty++;
+        showToast('✅', `+1 ${name}`);
+      } else {
+        cart.push({ id, name, price: parseInt(price), img, qty: 1 });
+        showToast('🛍️', `"${name}" agregado al carrito`);
+      }
+      updateCartUI();
+    }
+
+    // Add to cart — products
+    document.querySelectorAll('.btn-add-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        addToCart(btn.dataset.id, btn.dataset.name, btn.dataset.price, btn.dataset.img);
+      });
+    });
+
+    // Add to cart — offers
+    document.querySelectorAll('.btn-offer-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        addToCart(btn.dataset.id, btn.dataset.name, btn.dataset.price, btn.dataset.img);
+      });
+    });
+
+    // ============================================================
+    // WISHLIST (Favoritos)
+    // ============================================================
+    document.querySelectorAll('.product-wishlist').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        btn.classList.toggle('active');
+        if (btn.classList.contains('active')) {
+          btn.textContent = '❤️';
+          showToast('❤️', 'Agregado a favoritos');
+        } else {
+          btn.textContent = '🤍';
+        }
+      });
+    });
+
+    // ============================================================
+    // CHECKOUT POR WHATSAPP
+    // ============================================================
+    function buildWhatsAppMessage() {
+      if (cart.length === 0) return '';
+      let msg = '¡Hola! 🌸 Quiero hacer un pedido de *Glow Beauty*:\n\n';
+      cart.forEach(item => {
+        msg += `• ${item.name} x${item.qty} — $${(item.price * item.qty).toLocaleString()}\n`;
+      });
+      const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+      msg += `\n*Total: $${total.toLocaleString()}*\n\n¿Pueden ayudarme con mi pedido? 😊`;
+      return encodeURIComponent(msg);
+    }
+
+    function hasWhatsAppNumber() {
+      return /^\d{8,15}$/.test(WHATSAPP_NUMBER);
+    }
+
+    function openWhatsApp(message) {
+      if (!hasWhatsAppNumber()) {
+        showToast('⚙️', 'Configura tu número de WhatsApp en index.html para recibir pedidos');
+        return;
+      }
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank', 'noopener');
+    }
+
+    document.getElementById('checkout-whatsapp-btn').addEventListener('click', () => {
+      const msg = buildWhatsAppMessage();
+      if (msg) {
+        openWhatsApp(msg);
+      }
+    });
+
+    // ============================================================
+    // WHATSAPP FLOTANTE
+    // ============================================================
+    document.getElementById('whatsapp-btn').addEventListener('click', () => {
+      const msg = encodeURIComponent('¡Hola! 🌸 Vi el catálogo de Glow Beauty y me gustaría más información sobre sus productos. ¿Me pueden ayudar? 😊');
+      openWhatsApp(msg);
+    });
+
+    ['promo-whatsapp-btn', 'social-wa'].forEach(id => {
+      document.getElementById(id).addEventListener('click', event => {
+        event.preventDefault();
+        const msg = encodeURIComponent('¡Hola! 🌸 Vi el catálogo de Glow Beauty y me gustaría más información sobre sus productos. ¿Me pueden ayudar? 😊');
+        openWhatsApp(msg);
+      });
+    });
+
+    // ============================================================
+    // TOAST NOTIFICATION
+    // ============================================================
+    function showToast(icon, message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `<span class="toast-icon">${icon}</span><span>${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    // ============================================================
+    // INIT
+    // ============================================================
+    updateCartUI();
+  </script>
+
+</body>
+</html>
