@@ -52,3 +52,35 @@ class Favorito(models.Model):
 
     def __str__(self):
         return f"{self.usuario.username} · {self.producto.nombre}"
+
+class Carrito(models.Model):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE, related_name="carrito")
+    creado_en = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "carrito"
+        verbose_name_plural = "carritos"
+
+    def __str__(self):
+        return f"Carrito de {self.usuario.username}"
+
+    @property
+    def get_total(self):
+        return sum(item.get_subtotal for item in self.items.all())
+
+
+class ItemCarrito(models.Model):
+    carrito = models.ForeignKey(Carrito, on_delete=models.CASCADE, related_name="items")
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField(default=1)
+
+    class Meta:
+        verbose_name = "ítem del carrito"
+        verbose_name_plural = "ítems del carrito"
+
+    def __str__(self):
+        return f"{self.cantidad} de {self.producto.nombre}"
+
+    @property
+    def get_subtotal(self):
+        return self.producto.precio * self.cantidad

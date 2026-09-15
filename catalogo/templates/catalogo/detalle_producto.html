@@ -11,14 +11,19 @@
       <p class="price">${{ producto.precio|floatformat:0 }}</p>
       <p>{{ producto.descripcion|linebreaksbr }}</p>
       {% if producto.destacado %}<span class="tag">Producto destacado</span>{% endif %}
-      {% if user.is_authenticated %}
-        <form method="post" action="{% url 'catalogo:alternar_favorito' producto.slug %}" class="favorite-form">
-          {% csrf_token %}<button class="button" type="submit">{% if es_favorito %}Quitar de favoritos{% else %}♡ Guardar en favoritos{% endif %}</button>
-        </form>
-      {% else %}
-        <a class="button" href="{% url 'catalogo:iniciar_sesion' %}?next={{ request.path }}">Ingresa para guardar favoritos</a>
-      {% endif %}
-      <p class="availability">Disponible para consulta</p>
+      <div class="product-actions">
+        {% if user.is_authenticated %}
+          <form method="post" action="{% url 'catalogo:alternar_favorito' producto.slug %}" class="favorite-form" style="display:inline-block; margin-right: 10px;">
+            {% csrf_token %}<button class="btn btn-secondary" type="submit">{% if es_favorito %}Quitar de favoritos{% else %}♡ Guardar en favoritos{% endif %}</button>
+          </form>
+          <form method="post" action="{% url 'catalogo:agregar_al_carrito' producto.slug %}" class="cart-form" style="display:inline-block;">
+            {% csrf_token %}<button class="btn btn-primary" type="submit">Añadir al carrito</button>
+          </form>
+        {% else %}
+          <a class="btn btn-secondary" href="{% url 'catalogo:iniciar_sesion' %}?next={{ request.path }}">Ingresa para comprar</a>
+        {% endif %}
+      </div>
+      <p class="availability">Disponible para envío inmediato</p>
     </div>
   </div>
 </section>

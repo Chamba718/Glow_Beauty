@@ -1,0 +1,87 @@
+{% extends 'catalogo/base.html' %}
+{% load static %}
+
+{% block title %}Carrito de Compras | Glow Beauty{% endblock %}
+
+{% block content %}
+<div class="cart-container">
+    <div class="cart-header">
+        <h1>Tu Carrito de Compras</h1>
+        <a href="{% url 'catalogo:inicio' %}" class="btn btn-outline">Seguir comprando</a>
+    </div>
+
+    {% if carrito.items.count > 0 %}
+    <div class="cart-content">
+        <div class="cart-items">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in carrito.items.all %}
+                    <tr>
+                        <td class="cart-product-info">
+                            {% if item.producto.imagen %}
+                            <img src="{{ item.producto.imagen.url }}" alt="{{ item.producto.nombre }}" class="cart-img">
+                            {% else %}
+                            <div class="cart-img-placeholder"></div>
+                            {% endif %}
+                            <div class="cart-product-details">
+                                <a href="{{ item.producto.get_absolute_url }}">{{ item.producto.nombre }}</a>
+                                <p class="category">{{ item.producto.categoria.nombre }}</p>
+                            </div>
+                        </td>
+                        <td class="cart-price">${{ item.producto.precio }}</td>
+                        <td class="cart-quantity">{{ item.cantidad }}</td>
+                        <td class="cart-subtotal">${{ item.get_subtotal }}</td>
+                        <td class="cart-actions">
+                            <form action="{% url 'catalogo:eliminar_del_carrito' item.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn-remove" aria-label="Eliminar producto">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                        <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                                    </svg>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="cart-summary">
+            <h3>Resumen de la compra</h3>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span>${{ carrito.get_total }}</span>
+            </div>
+            <div class="summary-row">
+                <span>Envío</span>
+                <span>Calculado en el checkout</span>
+            </div>
+            <div class="summary-total">
+                <span>Total Estimado</span>
+                <span>${{ carrito.get_total }}</span>
+            </div>
+            <button class="btn btn-primary btn-block">Proceder al Pago</button>
+        </div>
+    </div>
+    {% else %}
+    <div class="empty-cart">
+        <svg viewBox="0 0 24 24" width="64" height="64" fill="#ccc">
+            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.1 17 7 17h11v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H18c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22.46 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+        </svg>
+        <h2>Tu carrito está vacío</h2>
+        <p>Parece que aún no has agregado nada al carrito.</p>
+        <a href="{% url 'catalogo:inicio' %}" class="btn btn-primary">Descubrir Productos</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
