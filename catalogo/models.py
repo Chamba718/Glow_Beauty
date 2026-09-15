@@ -84,3 +84,16 @@ class ItemCarrito(models.Model):
     @property
     def get_subtotal(self):
         return self.producto.precio * self.cantidad
+
+
+class PerfilUsuario(models.Model):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE, related_name="perfil")
+    telefono = models.CharField(max_length=20, blank=True, null=True)
+    direccion = models.TextField(blank=True, null=True)
+
+    class Meta:
+        verbose_name = "perfil de usuario"
+        verbose_name_plural = "perfiles de usuario"
+
+    def __str__(self):
+        return f"Perfil de {self.usuario.username}"

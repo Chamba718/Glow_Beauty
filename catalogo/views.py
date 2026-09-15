@@ -3,7 +3,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 from .forms import RegistroForm
-from .models import Categoria, Favorito, Producto, Carrito, ItemCarrito
+from .models import Categoria, Favorito, Producto, Carrito, ItemCarrito, PerfilUsuario
 
 
 def inicio(request):
@@ -90,3 +90,52 @@ def eliminar_del_carrito(request, item_id):
         item.delete()
         messages.info(request, f"{nombre} fue eliminado de tu carrito.")
     return redirect("catalogo:ver_carrito")
+
+@login_required
+def checkout_whatsapp(request):
+    carrito, _ = Carrito.objects.get_or_create(usuario=request.user)
+    perfil, _ = PerfilUsuario.objects.get_or_create(usuario=request.user)
+    
+    if carrito.items.count() == 0:
+        messages.error(request, "Tu carrito está vacío. Agrega productos antes de comprar.")
+        return redirect("catalogo:ver_carrito")
+        
+    if request.method == "POST":
+        # Guardar datos del usuario
+        request.user.first_name = request.POST.get("nombre", "")
+        request.user.last_name = request.POST.get("apellido", "")
+        request.user.save()
+        
+        perfil.telefono = request.POST.get("telefono", "")
+        perfil.direccion = request.POST.get("direccion", "")
+        perfil.save()
+        
+        # Construir mensaje de WhatsApp
+        import urllib.parse
+        
+        # TODO: Cambiar este número al oficial de la tienda
+        numero_whatsapp = "3107412380" 
+        
+        mensaje = f"¡Hola Glow Beauty! ✨ Quisiera realizar el siguiente pedido:\n\n"
+        mensaje += f"*Detalles del cliente:*\n"
+        mensaje += f"👤 Nombre: {request.user.first_name} {request.user.last_name}\n"
+        mensaje += f"📞 Teléfono: {perfil.telefono}\n"
+        mensaje += f"📍 Dirección: {perfil.direccion}\n\n"
+        
+        mensaje += f"*Pedido:*\n"
+        for item in carrito.items.all():
+            mensaje += f"▪ {item.cantidad}x {item.producto.nombre} (${item.get_subtotal})\n"
+            
+        mensaje += f"\n💰 *Total a pagar:* ${carrito.get_total}\n"
+        mensaje += f"¡Gracias!"
+        
+        # Vaciar el carrito
+        carrito.items.all().delete()
+        
+        # Codificar mensaje para URL
+        mensaje_codificado = urllib.parse.quote(mensaje)
+        url_whatsapp = f"https://wa.me/{numero_whatsapp}?text={mensaje_codificado}"
+        
+        return redirect(url_whatsapp)
+        
+    return render(request, "catalogo/checkout.html", {"carrito": carrito, "perfil": perfil})
