@@ -1,3 +1,4 @@
+{% load glow_filters %}
 <article class="product-card">
   <a href="{{ producto.get_absolute_url }}" class="product-image">
     {% if producto.imagen %}<img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">{% else %}<span>✦</span>{% endif %}
@@ -5,7 +6,7 @@
   <div class="product-info">
     <p>{{ producto.categoria.nombre }}</p>
     <h3><a href="{{ producto.get_absolute_url }}">{{ producto.nombre }}</a></h3>
-    <strong>${{ producto.precio|floatformat:0 }}</strong>
+    <strong>{{ producto.precio|cop }}</strong>
     {% if producto.destacado %}<span class="tag">Destacado</span>{% endif %}
   </div>
 </article>

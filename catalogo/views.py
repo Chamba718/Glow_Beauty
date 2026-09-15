@@ -110,24 +110,45 @@ def checkout_whatsapp(request):
         perfil.direccion = request.POST.get("direccion", "")
         perfil.save()
         
-        # Construir mensaje de WhatsApp
+        # Construir mensaje de WhatsApp premium
         import urllib.parse
         
-        # TODO: Cambiar este número al oficial de la tienda
-        numero_whatsapp = "3107412380" 
+        def cop(valor):
+            """Formato Peso Colombiano: 10000 → $10.000"""
+            try:
+                return f"${int(round(float(valor))):,.0f}".replace(",", ".")
+            except Exception:
+                return f"${valor}"
         
-        mensaje = f"¡Hola Glow Beauty! ✨ Quisiera realizar el siguiente pedido:\n\n"
-        mensaje += f"*Detalles del cliente:*\n"
-        mensaje += f"👤 Nombre: {request.user.first_name} {request.user.last_name}\n"
-        mensaje += f"📞 Teléfono: {perfil.telefono}\n"
-        mensaje += f"📍 Dirección: {perfil.direccion}\n\n"
+        numero_whatsapp = "573152814129"
         
-        mensaje += f"*Pedido:*\n"
+        nombre_completo = f"{request.user.first_name} {request.user.last_name}".strip() or request.user.username
+        
+        linea = "━━━━━━━━━━━━━━━━━━━━━━━━"
+        
+        mensaje  = f"✨ *NUEVO PEDIDO — GLOW BEAUTY* ✨\n"
+        mensaje += f"{linea}\n\n"
+        
+        mensaje += f"👤 *Cliente*\n"
+        mensaje += f"   Nombre: *{nombre_completo}*\n"
+        mensaje += f"   📞 Tel: {perfil.telefono}\n"
+        mensaje += f"   📍 Dirección: {perfil.direccion}\n\n"
+        
+        mensaje += f"{linea}\n"
+        mensaje += f"🛍️ *Detalle del Pedido*\n"
+        mensaje += f"{linea}\n"
         for item in carrito.items.all():
-            mensaje += f"▪ {item.cantidad}x {item.producto.nombre} (${item.get_subtotal})\n"
-            
-        mensaje += f"\n💰 *Total a pagar:* ${carrito.get_total}\n"
-        mensaje += f"¡Gracias!"
+            subtotal = cop(item.get_subtotal)
+            precio_unit = cop(item.producto.precio)
+            mensaje += f"\n▸ *{item.producto.nombre}*\n"
+            mensaje += f"   {item.cantidad} ud. × {precio_unit} = *{subtotal}*\n"
+        
+        total = cop(carrito.get_total)
+        mensaje += f"\n{linea}\n"
+        mensaje += f"💰 *TOTAL A PAGAR: {total}*\n"
+        mensaje += f"{linea}\n\n"
+        mensaje += f"_Pago contra entrega / transferencia._\n"
+        mensaje += f"¡Gracias por tu compra! 🌸"
         
         # Vaciar el carrito
         carrito.items.all().delete()

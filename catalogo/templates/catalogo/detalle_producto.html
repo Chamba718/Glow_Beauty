@@ -1,4 +1,5 @@
 {% extends 'catalogo/base.html' %}
+{% load glow_filters %}
 {% block title %}{{ producto.nombre }} | Glow Beauty{% endblock %}
 {% block content %}
 <section class="detail">
@@ -8,7 +9,7 @@
     <div class="detail-copy">
       <p class="eyebrow">{{ producto.categoria.nombre }}</p>
       <h1>{{ producto.nombre }}</h1>
-      <p class="price">${{ producto.precio|floatformat:0 }}</p>
+      <p class="price">{{ producto.precio|cop }}</p>
       <p>{{ producto.descripcion|linebreaksbr }}</p>
       {% if producto.destacado %}<span class="tag">Producto destacado</span>{% endif %}
       <div class="product-actions">

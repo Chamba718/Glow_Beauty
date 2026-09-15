@@ -1,5 +1,5 @@
 {% extends 'catalogo/base.html' %}
-{% load static %}
+{% load static glow_filters %}
 
 {% block title %}Completar Pedido | Glow Beauty{% endblock %}
 
@@ -51,14 +51,14 @@
                     {% for item in carrito.items.all %}
                     <div class="summary-item">
                         <span class="item-name">{{ item.cantidad }}x {{ item.producto.nombre }}</span>
-                        <span class="item-price">${{ item.get_subtotal }}</span>
+                        <span class="item-price">{{ item.get_subtotal|cop }}</span>
                     </div>
                     {% endfor %}
                 </div>
                 
                 <div class="summary-total" style="margin-top: 15px;">
                     <span>Total</span>
-                    <span>${{ carrito.get_total }}</span>
+                    <span>{{ carrito.get_total|cop }}</span>
                 </div>
                 
                 <button type="submit" form="checkoutForm" class="btn btn-primary btn-block btn-whatsapp">

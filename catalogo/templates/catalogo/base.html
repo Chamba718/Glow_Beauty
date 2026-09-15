@@ -38,7 +38,16 @@
     </nav>
   </header>
   <main>
-    {% if messages %}<div class="messages">{% for message in messages %}<p class="{{ message.tags }}">{{ message }}</p>{% endfor %}</div>{% endif %}
+    {% if messages %}
+    <div class="messages" role="alert" aria-live="polite">
+      {% for message in messages %}
+      <p class="{{ message.tags }}">
+        {% if 'success' in message.tags %}✅{% elif 'error' in message.tags %}❌{% elif 'warning' in message.tags %}⚠️{% else %}ℹ️{% endif %}
+        {{ message }}
+      </p>
+      {% endfor %}
+    </div>
+    {% endif %}
     {% block content %}{% endblock %}
   </main>
   <footer>

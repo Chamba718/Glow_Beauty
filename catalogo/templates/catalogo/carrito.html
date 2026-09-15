@@ -1,5 +1,5 @@
 {% extends 'catalogo/base.html' %}
-{% load static %}
+{% load static glow_filters %}
 
 {% block title %}Carrito de Compras | Glow Beauty{% endblock %}
 
@@ -37,9 +37,9 @@
                                 <p class="category">{{ item.producto.categoria.nombre }}</p>
                             </div>
                         </td>
-                        <td class="cart-price">${{ item.producto.precio }}</td>
+                        <td class="cart-price">{{ item.producto.precio|cop }}</td>
                         <td class="cart-quantity">{{ item.cantidad }}</td>
-                        <td class="cart-subtotal">${{ item.get_subtotal }}</td>
+                        <td class="cart-subtotal">{{ item.get_subtotal|cop }}</td>
                         <td class="cart-actions">
                             <form action="{% url 'catalogo:eliminar_del_carrito' item.id %}" method="post">
                                 {% csrf_token %}
@@ -60,7 +60,7 @@
             <h3>Resumen de la compra</h3>
             <div class="summary-row">
                 <span>Subtotal</span>
-                <span>${{ carrito.get_total }}</span>
+                <span>{{ carrito.get_total|cop }}</span>
             </div>
             <div class="summary-row">
                 <span>Envío</span>
@@ -68,7 +68,7 @@
             </div>
             <div class="summary-total">
                 <span>Total Estimado</span>
-                <span>${{ carrito.get_total }}</span>
+                <span>{{ carrito.get_total|cop }}</span>
             </div>
             <a href="{% url 'catalogo:checkout_whatsapp' %}" class="btn btn-primary btn-block">Proceder al Pago</a>
         </div>
