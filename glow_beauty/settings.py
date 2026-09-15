@@ -69,10 +69,20 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Cloudinary Configuration for Media
 MEDIA_URL = "/media/"
-if "CLOUDINARY_URL" in os.environ:
+if "CLOUDINARY_NAME" in os.environ:
+    import cloudinary
+    import cloudinary.uploader
+    import cloudinary.api
+    
+    cloudinary.config( 
+        cloud_name = os.environ.get("CLOUDINARY_NAME"), 
+        api_key = os.environ.get("CLOUDINARY_KEY"), 
+        api_secret = os.environ.get("CLOUDINARY_SECRET"),
+        secure = True
+    )
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 else:
-    # Fallback to local if CLOUDINARY_URL is not set (e.g., local development without env var)
+    # Fallback to local
     MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
